@@ -1,1 +1,3 @@
- *.* linguist-language=C#,MVC
+$ cat .gitattributes
+path/to/cpp/code/*.h linguist-language=C
+path/to/c/code/*.h linguist-language=C++
