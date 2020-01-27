@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Crud_MongoDB.Models.Docket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.docketDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.docketCaseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.docketCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.myProperty)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.docketDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.docketCaseId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.docketCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.myProperty)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item._id}) |
+            @Html.ActionLink("Details", "Details", new { id=item._id}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item._id })
+        </td>
+    </tr>
+}
+
+</table>
